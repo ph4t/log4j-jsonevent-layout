@@ -20,7 +20,7 @@ To use this library inside a grails project:
 
 1.  Build this library (`gradle build`) and move the produced `jar` file to the `lib` folder
 2.  Define the appender inside `Config.groovy`:
-3.  
+  
 	log4j = {
     	appenders {
     		...
