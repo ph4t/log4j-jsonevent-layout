@@ -9,10 +9,15 @@ The [original library](https://github.com/logstash/log4j-jsonevent-layout) has a
 
 Main differences compared to the original code are:
 - outputs correct location information (thanks to [this post](http://stackoverflow.com/questions/18070863/grails-logging-is-there-any-existing-solution-to-be-able-to-log-the-file-lin))
-- switched from an external json library to JsonBuilder
+- renamed the appender to `JSONGroovyEventLayout` to avoid any conflicts
 - MDC key/value pairs are added directly to `@fields`
-- gradle instead of maven
 - v1 version removed
+
+Implementation changes:
+- switched from an external json library to JsonBuilder
+- made the code more groovy...
+- gradle instead of maven
+
 
 ## Grails Usage
 Complete documentation is provided by [original library](https://github.com/logstash/log4j-jsonevent-layout)
