@@ -20,14 +20,14 @@ To use this library inside a grails project:
 
 1.  Build this library (`gradle build`) and move the produced `jar` file to the `lib` folder
 2.  Define the appender inside `Config.groovy`:
-  
-	log4j = {
-    	appenders {
-    		...
-    		rollingFile name: "logstash", maxFileSize: '100MB', file: "logstash.log", layout: (new net.logstash.log4j.JSONGroovyEventLayout())
-    		...
-    	}
-    	//don't forget to use the new appender
+
+		log4j = {
+	    	appenders {
+	    		...
+	    		rollingFile name: "logstash", maxFileSize: '100MB', file: "logstash.log", layout: (new net.logstash.log4j.JSONGroovyEventLayout())
+	    		...
+	    	}
+	    	//don't forget to use the new appender
 
 
 Sample logstash config:
