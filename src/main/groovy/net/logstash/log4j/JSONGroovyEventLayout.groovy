@@ -17,10 +17,6 @@ public class JSONGroovyEventLayout extends Layout {
     protected boolean activeIgnoreThrowable = ignoreThrowable;
     protected String hostname = new HostData().getHostName();
 
-    protected String ndc;
-    protected Map mdc;
-
-
     public static final TimeZone UTC = TimeZone.getTimeZone("UTC");
     public static final FastDateFormat ISO_DATETIME_TIME_ZONE_FORMAT_WITH_MILLIS = FastDateFormat.getInstance("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", UTC);
 
@@ -48,10 +44,9 @@ public class JSONGroovyEventLayout extends Layout {
     public String format(LoggingEvent loggingEvent) {
 
 
-        mdc = loggingEvent.getProperties();
-        ndc = loggingEvent.getNDC();
+        def mdc = loggingEvent.getProperties();
+        def ndc = loggingEvent.getNDC();
 
-//        logstashEvent = new JSONObject();
 		def json = [
 			"@source_host"	: hostname,
 			"@message": loggingEvent.getRenderedMessage(),
